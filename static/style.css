@@ -1,0 +1,38 @@
+
+
+h1{
+    color: rgb(0, 252, 252); 
+    text-align: center;
+}
+
+body{
+    background: #565656;
+    color: azure;
+    font-family: "Montserrat Alternates", serif;
+}
+
+a{
+    color: aliceblue;
+}
+
+.blue_button{
+    color: blue;
+    background-color: aliceblue;
+    padding: 10px;
+    margin-right: 20px;
+    text-decoration: none;
+    border: 3px solid rgb(203, 12, 9);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.blue_button:hover{
+    color: black;
+    background: #ee0707;
+}
+nav{
+    background: #edea46;
+}
+/* .my_head{
+    margin-top: 0px !important; 
+} */
