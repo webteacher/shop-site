@@ -73,6 +73,31 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+
+          <section>
+            <h3>
+              Товари
+            </h3>
+            <div class="items">
+
+            {% for id,name,description,price,category_id,image in items  %}
+          
+            <div class="card" style="width: 18rem;">
+              <img src="{{url_for('static', filename = image)}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">
+                {{name}}
+                </h5>
+                <p class="card-text">{{price}}грн</p>
+                <p class = "card-text"> {{description}}</p>
+                <a href="#" class="btn btn-primary">Купити</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+   
+          </section>
     </main>
     <footer>
 

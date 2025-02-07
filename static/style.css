@@ -36,3 +36,18 @@ nav{
 /* .my_head{
     margin-top: 0px !important; 
 } */
+
+
+.carousel{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    max-height :450px; 
+    overflow: hidden;
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    gap: 10px;
+}

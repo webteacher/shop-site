@@ -1,15 +1,16 @@
 from flask import Flask,render_template
+from db_scripts import DatabaseManager
 
 app = Flask(__name__)
+db = DatabaseManager()
 
 @app.route("/")
-def hello_world():
-    
-    return render_template("index.html")
-
-
-@app.route("/start/")
 def index():
-    return "Start"
+    all_items = db.get_all_items()
+      
+    
+    return render_template("index.html", items=all_items)
+
+
 
 
