@@ -1,18 +1,19 @@
 
 
 h1{
-    color: rgb(0, 252, 252); 
+    color: rgb(197, 0, 252); 
     text-align: center;
 }
 
 body{
-    background: #565656;
+    background: #f5e1e1;
     color: azure;
     font-family: "Montserrat Alternates", serif;
 }
 
 a{
-    color: aliceblue;
+    color: rgb(172, 76, 241);
+    
 }
 
 .blue_button{
@@ -31,11 +32,29 @@ a{
     background: #ee0707;
 }
 nav{
-    background: #edea46;
+    background: #04dffc;
 }
+/* .carousel-inner{  */
+    
+
+
+.navbar-brand{
+    color: rgb(164, 28, 5); 
+}
+.card{
+    color: rgb(10, 0, 12);
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    gap: 10px;
+    background-color: #f6fec9;
+
+}
+
+
 /* .my_head{
     margin-top: 0px !important; 
-} */
+} */    
 
 
 .carousel{
@@ -50,4 +69,17 @@ nav{
     flex-wrap: wrap;
     min-width: 300px;
     gap: 10px;
+   
+
+   
+}
+h3{
+    color: #790202;
+     
+
+}
+.button_price{
+    color: #fffbfb;
+    background-color: #c604fc;
+   
 }
