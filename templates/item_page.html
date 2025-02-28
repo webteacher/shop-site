@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container">
+ 
+      <h3 class="my-5 text-center">
+        Товари
+      </h3>
+      <div class="row">
+        <div class="col">
+            <img class="img-fluid" src="{{url_for('static',filename = item[6])}}" alt="">
+
+        </div>
+        <div class="col">
+            <h2>
+                {{item[1]}}
+            </h2>
+            <h3 class = "my-5">
+                {{item[3]}}грн 
+            </h3>
+            <a href="" class = "btn btn-primary btn-lg">Купити</a>
+            <p>
+              {{item[2]}}  
+            </p>
+            
+        </div>
+      </div>
+  
+</main>
+{% endblock content %}

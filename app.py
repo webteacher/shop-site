@@ -17,5 +17,13 @@ def category(category_id):
     categories = db.get_all_categories()
     return render_template("category.html", items=category_items, categories=categories)
 
+@app.route("/items/<int:item_id>")
+def item_page(item_id):
+    item = db.get_item(item_id)
+    categories = db.get_all_categories()
+    return render_template("item_page.html",item = item, categories=categories)
+
+
+
 
 
