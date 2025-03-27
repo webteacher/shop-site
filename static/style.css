@@ -12,7 +12,7 @@ body{
 }
 
 a{
-    color: rgb(172, 76, 241);
+    color: rgb(12, 12, 13);
     
 }
 
@@ -81,4 +81,25 @@ h3{
 .btn btn_primary{
     color: #fd0303;
     background-color: #e340f1;
+}
+footer{
+    background-color:wheat ;
+    border-top: 30px solid violet;
+    width: auto;
+    height: 200px;
+    margin-top: 40px;
+    padding: 20px;
+}
+.footer_figure{
+    text-align: right;
+    background-color:rgb(103, 3, 103) ;
+    margin-top: 5%;
+    
+}
+
+.footer_link{
+    margin-bottom: 30px
+}
+main{
+    min-height: 70vh;
 }

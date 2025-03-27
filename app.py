@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 from db_scripts import DatabaseManager
 
 app = Flask(__name__)
@@ -23,6 +23,14 @@ def item_page(item_id):
     categories = db.get_all_categories()
     return render_template("item_page.html",item = item, categories=categories)
 
+
+@app.route("/search")
+def search_page():
+    categories = db.get_all_categories()
+
+    search = request.args.get("search")
+    items = db.search_items(search)
+    return render_template("search_result.html",items = items, categories=categories)
 
 
 

@@ -79,6 +79,17 @@ class DatabaseManager ():
         self.connection.commit()
         self.connection.close()
 
+
+    def search_items (self, search):
+        self.connect()
+
+
+        self.cursor.execute('''SELECT * FROM items WHERE name LIKE ? ''', ["%"+search+"%"])
+        items = self.cursor.fetchall()
+        self.connection.close()
+
+        return items
+
         
 
 

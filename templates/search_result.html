@@ -1,0 +1,19 @@
+  
+    {% extends 'base.html' %}
+    {% block content %}
+    <main class="container">
+     
+          <h3 class="my-5 text-center">
+            Товари
+          </h3>
+          <section>
+            <div class="items">
+            {% for id,name,description,price,category_id,image in items  %}
+                {% include 'card_item.html' %}
+            {% endfor %}
+          </div>
+          </section>
+
+    </main>
+    {% endblock content %}
+    
