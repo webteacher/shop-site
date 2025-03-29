@@ -44,7 +44,7 @@
                 </ul>
                
                 <form class="d-flex" role="search" method="get" action="{{url_for('search_page')}}">
-                  <input name = 'search'  class="form-control me-2" type="search" placeholder="Шукати" aria-label="Search">
+                  <input required name = 'search'  class="form-control me-2" type="search" placeholder="Шукати" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Пошук</button>
                 </form>
               </div>
@@ -64,7 +64,7 @@
       <div class="footer_info container">
         
         <div  class="footer_link">
-          <a class="about_us" href="">
+          <a class="about_us" href="{{url_for('about_us_info')}}">
             Про нас
           </a>
 

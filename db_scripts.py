@@ -51,19 +51,27 @@ class DatabaseManager ():
     def create_order(self):
         self.connect()
 
-        self.cursor.execute ('''INSERT INTO orders(full_name)
-                             VALUES("")''')
+        self.cursor.execute ('''INSERT INTO orders(status)
+                             VALUES(?)''', ['new'])
         self.connection.commit()
         order_id = self.cursor.lastrowid
         self.connection.close()
 
         return order_id
 
-    def add_item_in_order(self, item_id,order_id,quantity):
+    def add_item_in_order(self, item_id,order_id):
         self.connect()
+        self.cursor.execute('''SELECT * FROM items_in_orders
+         WHERE (item_id =? AND order_id =?)''', [item_id,order_id])
+        item  = self.cursor.fetchone()
+        if item :
+            self.cursor.execute('''UPDATE items_in_orders
+            SET quantity  = ?
+            WHERE (item_id =? AND order_id =?) ''', [item[3] + 1 ,item_id, order_id])
+        else :
+            self.cursor.execute(''' INSERT INTO items_in_orders(order_id,item_id)
+                                VALUES (?,?)''', [ order_id,item_id])
 
-        self.cursor.execute(''' INSERT INTO items_in_orders(order_id,item_id,quantity)
-                            VALUES (?,?,?)''', [ order_id,item_id,quantity])
         self.connection.commit()
         self.connection.close()
 
