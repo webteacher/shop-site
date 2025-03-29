@@ -32,6 +32,12 @@ def search_page():
     items = db.search_items(search)
     return render_template("search_result.html",items = items, categories=categories)
 
+@app.route("/about_us")
+def about_us_info():
+    info = about_us
+    return render_template("info_about_us", info = info )
+
+
 
 
 
