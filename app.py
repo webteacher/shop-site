@@ -48,6 +48,16 @@ def about_us_info():
     
     return render_template("info_about_us.html", categories  = categories)
 
+@app.route("/contacts")
+def contacts():
+    categories = db.get_all_categories()
+    return render_template("contacts.html",categories = categories)
+
+@app.route("/rules")
+def rules():
+    categories = db.get_all_categories()
+    return render_template("rules.html",categories = categories)
+
 
 
 
