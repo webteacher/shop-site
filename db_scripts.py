@@ -98,6 +98,18 @@ class DatabaseManager ():
 
         return items
 
+    def get_order_items(self, order_id): 
+        self.connect()
+        self.cursor.execute('''SELECT  i.id, i.name, i.price, i.image, io.quantity
+        FROM items_in_orders io
+        INNER JOIN items i ON io.item_id = i.id 
+        WHERE io.order_id = ?''',[int(order_id)])
+        items = self.cursor.fetchall()
+        self.connection.close()
+        return items
+
+                
+
         
 
 
