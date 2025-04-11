@@ -46,13 +46,19 @@
                
                 <form class="d-flex" role="search" method="get" action="{{url_for('search_page')}}">
                   <input required name = 'search'  class="form-control me-2" type="search" placeholder="Шукати" aria-label="Search">
+                  <div class = "search_object">
+                    <i class="bi bi-search"></i>
+                  </div>
                   <button class="btn btn-outline-success" type="submit">Пошук</button>
                 </form>
                 <button id="basket_btn" type="button" class="btn btn-outline-dark ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                   <i class="bi bi-cart"></i>
+                 
+
+
                   </button>
               </div>
-            </div>
+            </div>  
           </nav>
     </header> 
     {% block content %}
@@ -68,18 +74,23 @@
       <div class="footer_info container">
         
         <div  class="footer_link">
+          <i class="bi bi-chat-square-text"></i>
           <a class="about_us" href="{{url_for('about_us_info')}}">
             Про нас
           </a>
+          
 
         </div>
         <div class="footer_link">
+          <i class="bi bi-telephone"></i>
           <a class="contacts" href="{{url_for('contacts')}}">Контакти</a>
 
         </div>
      
        <div class="footer_link">
+        <i class="bi bi-book"></i>
         <a class="rules" href="{{url_for('rules')}}">Правила користування</a>
+        
        </div>
      
       </div>

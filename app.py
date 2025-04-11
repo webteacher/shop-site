@@ -14,7 +14,8 @@ def get_context():
         order_items  = db.get_order_items(order_id)
 
 
-    return {'categories': categories,'order_items': order_items }
+    return {'categories': categories }  # ,'order_items': order_items
+    # 
 
     
 
