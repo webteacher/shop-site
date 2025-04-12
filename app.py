@@ -12,9 +12,10 @@ def get_context():
     order_id = session.get("order_id", None)
     if order_id:
         order_items  = db.get_order_items(order_id)
+    else:
+        order_items = []
 
-
-    return {'categories': categories }  # ,'order_items': order_items
+    return {'categories': categories , 'order_items': order_items }  
     # 
 
     

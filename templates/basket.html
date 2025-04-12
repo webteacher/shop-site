@@ -1,0 +1,40 @@
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Товари в кошику</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {% if order_items|length >0 %}
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-5"></div>
+                    <div class="col-2"><small>quantity</small></div>
+                    <div class="col-3"><small>Price</small></div>
+            
+                </div>
+                {%for id,name,price,image,quantity in order_items%}
+                    <div class="row my-3">
+                        <div class="col-2"> <img src="{{url_for('static', filename = image)}}" class="card-img-top" alt="..."></div>
+                        <div class="col-5">{{name}}</div>
+                        <div class="col-2">{{quantity}}</div>
+                        <div class="col-3">{{price*quantity}}</div>
+                    
+                    </div>
+                {% endfor %}
+            {% else %}
+
+            <h3>
+                Немає товарів
+            </h3>
+            {%endif%}
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Продовжити покупки</button>
+          <button type="button" class="btn btn-primary">Оформити замовлення</button>
+        </div>
+      </div>
+    </div>
+  </div>

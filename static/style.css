@@ -78,7 +78,7 @@ h3{
      
 
 }
-.btn btn_primary{
+.btn_primary{
     color: #fd0303;
     background-color: #e340f1;
 }
@@ -102,8 +102,4 @@ footer{
 }
 main{
     min-height: 70vh;
-}
-.search_object{
-    height: 100px;
-    
 }
