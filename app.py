@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,session
+from flask import Flask,render_template,request,session, redirect,url_for
 from db_scripts import DatabaseManager
 from flask import request
 
@@ -19,9 +19,6 @@ def get_context():
     # 
 
     
-
-
-
 
 @app.route("/")
 def index():
@@ -73,6 +70,23 @@ def contacts():
 def rules():
     
     return render_template("rules.html")
+
+@app.route("/checkout")
+def order_checkout():
+    order_id = session.get("order_id", None)
+    if  not order_id:
+        return redirect(request.referrer)
+    
+    return render_template("order.html")
+
+@app.route("/basket/item/remove/<int:item_id>", methods = ["GET", "POST"])
+def delete_item(item_id):
+    db.delete_item_in_order(item_id)
+
+    return redirect(request.referrer)
+
+
+
 
 
 
